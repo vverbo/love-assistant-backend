@@ -9,7 +9,8 @@ import time
 load_dotenv()
 
 # Set OpenAI API key and Assistant ID
-openai.api_key = os.getenv("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")
+openai.api_key = os.getenv("OPENAI_API_KEY")  # ✅ Reads from Render or .env
+
 ASSISTANT_ID = os.getenv("asst_OevZOhAYHwKOWEuLO212Q13P")
 
 app = Flask(__name__)
@@ -73,6 +74,10 @@ def ask():
     final_response = messages.data[0].content[0].text.value
 
     return jsonify({"response": final_response})
+
+@app.route("/", methods=["GET"])
+def index():
+    return "Welcome! This is the Love Assistant backend. Try POSTing to /ask."
 
 if __name__ == "__main__":
     app.run(debug=True)
