@@ -8,10 +8,13 @@ import time
 # Load your .env variables
 load_dotenv()
 
+print("🔍 OPENAI_API_KEY:", os.getenv("OPENAI_API_KEY"))
+print("🔍 ASSISTANT_ID:", os.getenv("ASSISTANT_ID"))
+
 # Set OpenAI API key and Assistant ID
 openai.api_key = os.getenv("OPENAI_API_KEY")  # ✅ Reads from Render or .env
 
-ASSISTANT_ID = os.getenv("asst_OevZOhAYHwKOWEuLO212Q13P")
+ASSISTANT_ID = os.getenv("ASSISTANT_ID")
 
 app = Flask(__name__)
 
