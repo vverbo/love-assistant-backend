@@ -85,6 +85,5 @@ def index():
         "message": "Welcome to the Love Assistant. Use POST /ask with a message."
     })
 
-
 if __name__ == "__main__":
     app.run(debug=True)
