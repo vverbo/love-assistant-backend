@@ -80,7 +80,11 @@ def ask():
 
 @app.route("/", methods=["GET"])
 def index():
-    return "Welcome! This is the Love Assistant backend. Try POSTing to /ask."
+    return jsonify({
+        "status": "ok",
+        "message": "Welcome to the Love Assistant. Use POST /ask with a message."
+    })
+
 
 if __name__ == "__main__":
     app.run(debug=True)
